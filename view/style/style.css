@@ -6,11 +6,21 @@
 
 @font-face {
     font-family: 'Inter';
-    src: url(../media/Inter-VariableFont_opsz,wght.ttf);
+    src: url(../font/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+@keyframes loading {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 body{
     background: #f1f1f1;
+    animation: .5s linear loading;
 }
 
 header{
@@ -21,6 +31,14 @@ header{
 
 .logo img{
     height: 50px;
+}
+
+.logo{
+    transition: transform .2s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1) !important;
 }
 
 .nav{
@@ -41,6 +59,10 @@ header{
     font-family: 'Inter';
 }
 
+.links a:hover{
+    text-decoration: underline;
+}
+
 .login-contact a{
     display: flex;
     align-items: center;
@@ -48,6 +70,11 @@ header{
     gap: 10px;
     color: #404040;
     font-family: 'Inter';
+    transition: transform .2s ease;
+}
+
+.login-contact a:hover{
+    transform: scale(1.05);
 }
 
 .login-contact{
@@ -117,6 +144,7 @@ header{
     text-decoration: none;
     color: #404040;
     border-radius: 100px;
+    transition: background .2s ease, color .2s ease;
 }
 
 .case-type a:hover{
@@ -133,7 +161,14 @@ header{
     background: #ff8647;
     color: #f1f1f1;
     font-weight: bold;
-    font: 'Inter';
+    font-family: 'Inter';
+    transition: transform .2s ease, background .2s ease;
+}
+
+.case-type input:hover{
+    background: #ff6414;
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 .case-template{
@@ -141,6 +176,11 @@ header{
     padding: 25px;
     border-radius: 25px;
     background: #fff3ed;
+    transition: transform .2s ease;
+}
+
+.case-template:hover{
+    transform: scale(1.025);
 }
 
 .case-template p{
@@ -277,6 +317,7 @@ header{
     border: none;
     padding: 25px;
     display: flex;
+    cursor: pointer;
 }
 
 footer{
@@ -290,4 +331,137 @@ footer{
 footer hr{
     height: 10px;
     background: #4a4a4a;
+}
+
+/* Inicio de sesión */
+
+.login{
+    font-family: 'Inter';
+}
+
+.login h1{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.login-form{
+    border: 1px solid lightgray;
+    padding: 25px;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    height: 450px;
+    margin-bottom: 50px;
+}
+
+.email{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.password{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.email input[type=email]{
+    height: 50px;
+    font-size: 20px;
+    padding-left: 15px;
+    border-radius: 25px;
+    border: 1px solid lightgray;
+    transition: transform .2s ease;
+}
+
+.email input[type=email]:hover{
+    transform: scale(1.025);
+}
+
+.email input[type=email]:focus-visible{
+    transform: scale(1.025);
+}
+
+.password input[type=password]{
+    height: 50px;
+    font-size: 20px;
+    padding-left: 15px;
+    border-radius: 25px;
+    border: 1px solid lightgray;
+    transition: transform .2s ease;
+}
+
+.password input[type=password]:hover{
+    transform: scale(1.025);
+}
+
+.password input[type=password]:focus-visible{
+    transform: scale(1.025);
+}
+
+.login-button{
+    width: 50%;
+    margin: auto;
+    height: 50px;
+    border: none;
+    background: #ff6414;
+    border-radius: 25px;
+    color: #f1f1f1;
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: 20px;
+    transition: transform .2s ease, background .2s ease;
+}
+
+.login-button:hover{
+    transform: scale(1.025);
+    background: #ff8647;
+}
+
+.login-form p{
+    margin: auto;
+}
+
+.login-form a{
+    color: blue;
+}
+
+.nombre{
+    display: flex;
+    flex-direction: column;
+}
+
+.apellido{
+    display: flex;
+    flex-direction: column;
+}
+
+.nom-ape{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    gap: 75px;
+}
+
+.nom-ape input[type=text]{
+    height: 50px;
+    font-size: 20px;
+    padding-left: 15px;
+    border-radius: 25px;
+    border: 1px solid lightgray;
+    transition: transform .2s ease;
+}
+
+.nom-ape input[type=text]:hover{
+    transform: scale(1.025);
+}
+
+.nom-ape input[type=text]:focus-visible{
+    transform: scale(1.025);
 }
