@@ -36,7 +36,7 @@
                     <label for="">Contraseña</label>
                     <input type="password" name="password" id="">
                 </div>
-                <p>¿No tienes cuenta? <a href="register.html">Regístrate</a></p>
+                <p>¿No tienes cuenta? <a href="register.php">Regístrate</a></p>
                 <input type="submit" value="Iniciar sesión" class="login-button">
             </form>
         </section>
