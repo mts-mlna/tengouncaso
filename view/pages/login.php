@@ -9,7 +9,8 @@
 <body>
     <header>
         <div class="logo">
-            <a href="../../index.html"><img src="../media/Tuc-Logo.png" alt=""></a>
+            <a href="../../index.php"><img src="../media/Tuc-Logo.png" alt=""></a>
+
         </div>
         <div class="nav">
             <nav class="links">
@@ -29,11 +30,11 @@
             <form action="" method="post" class="login-form">
                 <div class="email">
                     <label for="">Correo electrónico</label>
-                    <input type="email" name="" id="">
+                    <input type="email" name="email" id="">
                 </div>
                 <div class="password">
                     <label for="">Contraseña</label>
-                    <input type="password" name="" id="">
+                    <input type="password" name="password" id="">
                 </div>
                 <p>¿No tienes cuenta? <a href="register.html">Regístrate</a></p>
                 <input type="submit" value="Iniciar sesión" class="login-button">

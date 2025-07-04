@@ -9,7 +9,7 @@
 <body>
     <header>
         <div class="logo">
-            <a href="../../index.html"><img src="../media/Tuc-Logo.png" alt=""></a>
+            <a href="../../index.php"><img src="../media/Tuc-Logo.png" alt=""></a>
         </div>
         <div class="nav">
             <nav class="links">
@@ -29,21 +29,21 @@
             <form action="" method="post" class="login-form">
                 <div class="email">
                     <label for="">Correo electrónico</label>
-                    <input type="email" name="" id="">
+                    <input type="email" name="email" id="">
                 </div>
                 <div class="nom-ape">
                     <div class="nombre">
                         <label for="">Nombre</label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="nombre" id="">
                     </div>
                     <div class="apellido">
                         <label for="">Apellido</label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="apellido" id="">
                     </div>
                 </div>
                 <div class="password">
                     <label for="">Contraseña</label>
-                    <input type="password" name="" id="">
+                    <input type="password" name="password" id="">
                 </div>
                 <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
                 <input type="submit" value="Crear cuenta" class="login-button">
