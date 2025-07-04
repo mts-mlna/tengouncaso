@@ -1,3 +1,34 @@
+<?php
+session_start();
+include '../../controller/conexionBD.php'; // Asegurate que esta ruta sea correcta
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
+
+    if ($resultado->num_rows === 1) {
+        $usuario = $resultado->fetch_assoc();
+        if (password_verify($password, $usuario["contraseña"])) {
+            $_SESSION["usuario"] = $usuario["email"];
+            header("Location: ../../index.php"); // Redirige al inicio
+            exit();
+        } else {
+            echo "<script>alert('Contraseña incorrecta');</script>";
+        }
+    } else {
+        echo "<script>alert('Usuario no encontrado');</script>";
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

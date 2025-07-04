@@ -1,3 +1,28 @@
+<?php
+session_start();
+include '../../controller/conexionBD.php'; // Ajustá la ruta si es distinta
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["email"];
+    $nombre = $_POST["nombre"];
+    $apellido = $_POST["apellido"];
+    $password = password_hash($_POST["password"], PASSWORD_DEFAULT); // Seguridad
+
+    $stmt = $conn->prepare("INSERT INTO usuarios (email, nombre, apellido, contraseña) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $email, $nombre, $apellido, $password);
+
+    if ($stmt->execute()) {
+        header("Location: login.php"); // Redirige al login
+        exit();
+    } else {
+        echo "<script>alert('Error al registrar: " . $conn->error . "');</script>";
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
