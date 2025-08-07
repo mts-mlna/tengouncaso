@@ -1,6 +1,10 @@
 <?php
 session_start();
 include '../../controller/conexionBD.php'; 
+if (!isset($conn)) {
+    die("Error: la conexión no se estableció correctamente.");
+}
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
@@ -15,6 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $usuario = $resultado->fetch_assoc();
         if (password_verify($password, $usuario["contraseña"])) {
             $_SESSION["usuario"] = $usuario["email"];
+            $_SESSION["rol"] = $usuario["confirmado"]; // 0 = cliente, 1 = abogado
+            // echo "ROL: " . $usuario["confirmado"];exit();
             header("Location: ../../index.php"); 
             exit();
         } else {
@@ -45,10 +51,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="nav">
             <nav class="links">
-                <a href="">Servicios</a>
-                <a href="">Recursos</a>
-                <a href="">Ayuda</a>
-                <a href="">Nosotros</a>
+                <a href="../../index.php">Servicios</a>
+                <a href="cliente.php">Recursos</a>
+                <a href="../../index.php">Ayuda</a>
+                <a href="../../index.php">Nosotros</a>
             </nav>
             <nav class="login-contact">
                 <a href="" style="background: #ff8647; color: white; padding: 15px; border-radius: 10px; font-weight: bold;">Contacto</a>
@@ -88,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </main>
             <hr>
     <footer>
-        <p>Todos Abogados A.R.T © 2024. All Rights Reserved.</p>
+        <p>Tengo un Caso © 2025. All Rights Reserved.</p>
     </footer>
 </body>
 </html>

@@ -21,7 +21,7 @@ session_start();
                 <a href="">Servicios</a>
                 <a href="">Recursos</a>
                 <a href="">Ayuda</a>
-                <a href="">Nosotros</a>
+                <a href="view/pages/abogado.php">Nosotros</a>
             </nav>
             <nav class="login-contact">
                 <?php if (!isset($_SESSION["usuario"])): ?>
@@ -56,7 +56,7 @@ session_start();
                     <a href="">Víctima de Abuso Sexual</a>
                     <a href="">Acoso Sexual en el Trabajo</a>
                     <a href="">Problema de Empleo</a>
-                    <input type="submit" value="¡Consultar!">
+                    <a href="view/pages/cliente.php" class="submit">Consultar</a>
                 </div>
             </div>
         </section>
@@ -148,13 +148,14 @@ session_start();
                 <p>Recibí una consulta gratuita y comenzá tu reclamo.</p>
             </div>
             <div class="end-button">
-                <button>PEDIR CONSULTA</button>
+                <a href="view/pages/cliente.php">PEDIR CONSULTA</a>
             </div>
         </section>
     </main>
     <hr>
     <footer>
-        <p>Todos Abogados A.R.T © 2024. All Rights Reserved.</p>
+        
+        <p>Tengo un Caso © 2025. All Rights Reserved.</p>
     </footer>
 </body>
 

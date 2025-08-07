@@ -1,12 +1,16 @@
 <?php
 session_start();
 include '../../controller/conexionBD.php'; 
+if (!isset($conn)) {
+    die("Error: la conexión no se estableció correctamente.");
+}
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    $password = password_hash($_POST["password"], PASSWORD_DEFAULT); 
 
     $stmt = $conn->prepare("INSERT INTO usuarios (email, nombre, apellido, contraseña) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("ssss", $email, $nombre, $apellido, $password);
@@ -38,10 +42,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="nav">
             <nav class="links">
-                <a href="">Servicios</a>
-                <a href="">Recursos</a>
-                <a href="">Ayuda</a>
-                <a href="">Nosotros</a>
+                <a href="../../index.php">Servicios</a>
+                <a href="cliente.php">Recursos</a>
+                <a href="../../index.php">Ayuda</a>
+                <a href="../../index.php">Nosotros</a>
             </nav>
             <nav class="login-contact">
                 <a href="" style="background: #ff8647; color: white; padding: 15px; border-radius: 10px; font-weight: bold;">Contacto</a>
@@ -85,13 +89,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p>Recibí una consulta gratuita y comenzá tu reclamo.</p>
             </div>
             <div class="end-button">
-                <button>PEDIR CONSULTA</button>
+                <a href="../../index.php">PEDIR CONSULTA</a>
             </div>
         </section>
     </main>
             <hr>
     <footer>
-        <p>Todos Abogados A.R.T © 2024. All Rights Reserved.</p>
+        <p>Tengo un Caso © 2025. All Rights Reserved.</p>
     </footer>
 </body>
 </html>

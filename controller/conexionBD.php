@@ -1,5 +1,6 @@
 <?php 
-    $Dirrecion = new mysqli("localhost", "root", "", "tengouncaso");
-    if ($Dirrecion->connect_error) {
-        die("Connection failed: " . $Dirrecion->connect_error);
+    $conn = new mysqli("localhost", "root", "", "tengouncaso");
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
+?>
