@@ -38,7 +38,7 @@ if (!isset($_SESSION["rol"]) || $_SESSION["rol"] != 0) {
         </div>
     </header>
     <main>
-        <h2>Subí tu problema</h2>
+        <h2 class="problematitulo">Subí tu problema</h2>
         <form action="../../model/subirProblema.php" method="POST" class="problema-form">
             <label>Nombre:</label>
             <input type="text" name="nombre" required>
@@ -56,7 +56,7 @@ if (!isset($_SESSION["rol"]) || $_SESSION["rol"] != 0) {
 
             <button type="submit">Subir</button>
         </form>
-        <h2>Respuestas recibidas</h2>
+        <h2 class="problematitulo">Respuestas recibidas</h2>
         <?php
         $email_cliente = $_SESSION["usuario"];
         $result = $conn->query("SELECT * FROM problemas WHERE email = '$email_cliente' AND respuesta IS NOT NULL");

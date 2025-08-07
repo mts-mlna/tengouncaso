@@ -496,5 +496,74 @@ footer hr{
 }
 
 .problema-form{
-    
+    background: #fff;
+    border: 2px solid #000;
+    box-shadow: 3px 3px #000;
+    display: flex;
+    flex-direction: column;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding: 50px;
+    gap: 15px;
+    align-items: center;
+}
+
+.problema-form input{
+    width: 75%;
+    height: 50px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.problema-form textarea{
+    width: 100%;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.problema-form button{
+    font-family: 'Inter';
+    cursor: pointer;
+    width: 50%;
+    height: 75px;
+    border: none;
+    font-weight: bold;
+    background: #ff8647;
+    color: #fff;
+}
+
+.problema-form label{
+    font-family: 'Inter';   
+}
+
+.problematitulo{
+    display: flex;
+    background: #ff6414;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    height: 50px;
+    font-family: 'Inter';
+    color: #fff;
+    border: 2px solid #000;
+    box-shadow: 3px 3px #000;
+}
+
+.respuesta-box{
+    font-family: 'Inter';
+    background: #fff;
+    border: 2px solid #000;
+    box-shadow: 3px 3px #000;
+    display: flex;
+    flex-direction: column;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 50px;
+    padding: 50px;
+    gap: 15px;
+    align-items: center;
 }
