@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../../controller/conexionBD.php'; // Asegurate que esta ruta sea correcta
+include '../../controller/conexionBD.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $usuario = $resultado->fetch_assoc();
         if (password_verify($password, $usuario["contraseña"])) {
             $_SESSION["usuario"] = $usuario["email"];
-            header("Location: ../../index.php"); // Redirige al inicio
+            header("Location: ../../index.php"); 
             exit();
         } else {
             echo "<script>alert('Contraseña incorrecta');</script>";
